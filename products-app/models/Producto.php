@@ -1,12 +1,12 @@
 <?php
 
-class Producto {
+abstract class Producto {
+  public int $orden;
   private string $id;
-  private $nombreProducto;
-  private float $precio;
+  protected $nombreProducto;
+  protected float $precio;
   
   private DateTime $fechaAlta;
-  static private int $orden;
   static private int $serie = 0;
 
 function __construct (string $nombreProducto, float $precio,) {
@@ -20,9 +20,6 @@ function __construct (string $nombreProducto, float $precio,) {
 }
 
   
-function __toString () {
-  return join('|', [$this->id, $this->nombreProducto, $this->precio, $this->fechaAlta->format('m-d-Y H:m:i')]);
-} 
 
 // Acceder a variables protegidas o privadas, para eso usamos un getter:
 function getPrecio (): float {
@@ -33,11 +30,11 @@ static function aplicarDescuento25 (float $precio): float {
   return $precio * 0.75;
 }
 
+function __toString () {
+  return join(' | ', [$this->id, $this->nombreProducto, $this->precio.' €']);
+} 
+
+abstract function dimeTipo (): string;
+
 }
 
-class Alimento extends Producto {
-  private bool $tieneCaducidad;
-  private DateTime $fechaCaducidad;
-
- 
-}
