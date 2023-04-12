@@ -1,5 +1,7 @@
 <?php
 
+// Crear una clase denominada Compra que tendrá como propiedades obligatorias un array de objetos Alimento y otro de clase Utensilio. Realizar todas las operaciones necesarias para que imprima un ticket con la compra total.
+
 require_once(__DIR__.DIRECTORY_SEPARATOR.'Alimento.php');
 require_once(__DIR__.DIRECTORY_SEPARATOR.'Utensilio.php');
 
@@ -28,5 +30,5 @@ class Compra {
 
 }
 
-$productos = new Compra(new Alimento('Patatas', 3), new Utensilio('Tuerca', 0.5));
-echo $productos-> dimeTotalCompra();
+// $productos = new Compra(new Alimento('Patatas', 3), new Utensilio('Tuerca', 0.5));
+// echo $productos-> dimeTotalCompra();
