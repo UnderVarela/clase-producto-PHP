@@ -45,5 +45,4 @@ class Alimento extends Producto {
  
 }
 
-$p = new Alimento ('Tomate', 12.5, true, new DateTime('2023-04-10'));
-echo $p->dimeTipo();
+

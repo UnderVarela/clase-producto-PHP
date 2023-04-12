@@ -17,7 +17,3 @@ class Utensilio extends Producto {
     return $toStringPadre.' | '.$this->tipo;
   }
 }
-
-$p = new Utensilio('Llaves', 3);
-
-echo $p->tipo;

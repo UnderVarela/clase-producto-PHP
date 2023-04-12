@@ -2,9 +2,9 @@
 
 abstract class Producto {
   public int $orden;
-  private string $id;
   protected $nombreProducto;
   protected float $precio;
+  private string $id;
   
   private DateTime $fechaAlta;
   static private int $serie = 0;
