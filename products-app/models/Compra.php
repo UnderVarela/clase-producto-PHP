@@ -11,18 +11,26 @@ class Compra {
     $this->productos = $productos;
   }
 
+  function getProductos () : array {
+    return $this->productos;
+  }
+
   function dimeTotalCompra (): float {
   //   $acumulador = 0;
   //   foreach ($this->productos as $producto) {
   //     $acumulador += $producto->getPrecio();
   //   }
   //   return $acumulador;
-  // } otra forma: 
+  // } 
+  // otra forma: 
     function sumarTotal ($acumulador, $producto ) {
       return $acumulador + $producto->getPrecio();
     }
   return array_reduce(
     $this->productos,
+    // function ($acumulador, $producto) {
+    //   return $acumulador + $producto->getPrecio();
+    // }
     "sumarTotal",
     0
   );

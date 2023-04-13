@@ -22,8 +22,18 @@ function __construct (string $nombreProducto, float $precio,) {
   
 
 // Acceder a variables protegidas o privadas, para eso usamos un getter:
+
+function getId (): string {
+  return $this->id;
+
+}
+
 function getPrecio (): float {
   return $this->precio;
+}
+
+function getNombreProducto () : string {
+  return $this->nombreProducto;
 }
 
 static function aplicarDescuento25 (float $precio): float {
