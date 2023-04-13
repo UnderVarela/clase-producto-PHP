@@ -13,7 +13,9 @@ function __construct (string $nombreProducto, float $precio,) {
   $this->orden = ++Producto::$serie;
   // Generar ID de forma automática: coge las 2 primeras letras en mayusculas, 
   // añade un guion y añade el orden:
-  $this->id = strlen($nombreProducto) > 1 ? strtoupper(substr($nombreProducto, 0, 2)).'-'.$this->orden : '##-'.$this->orden;
+  $this->id = strlen($nombreProducto) > 1 
+              ? strtoupper(substr($nombreProducto, 0, 2)).'-'.$this->orden 
+              : '##-'.$this->orden;
   $this->nombreProducto = $nombreProducto;
   $this->precio = $precio;
   $this-> fechaAlta = new DateTime();

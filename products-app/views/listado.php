@@ -29,7 +29,7 @@ require_once(USE_CASES.'listar-productos.php');
     foreach ($productos as $key => $producto):
     ?>
     <tr>
-      <th scope="row"><?=$producto->getId()?></th>
+      <th scope="row"><?=$producto->getId()?> (<?=get_class($producto)?>)</th>
       <td><?=$producto->getNombreProducto()?></td>
       <td><?=$producto->getPrecio()?> €</td>
     </tr>
