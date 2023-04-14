@@ -42,6 +42,14 @@ function getNombreProducto () : string {
   return $this->nombreProducto;
 }
 
+function setPrecio (float $precio) : void {
+  $this->precio = $precio;
+}
+
+function setNombreProducto (string $nombreProducto) : void {
+  $this->nombreProducto = $nombreProducto;
+}
+
 static function aplicarDescuento25 (float $precio): float {
   return $precio * 0.75;
 }

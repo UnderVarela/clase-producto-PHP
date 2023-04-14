@@ -30,11 +30,14 @@ require_once(USE_CASES.'listar-productos.php');
     foreach ($productos as $key => $producto):
     ?>
     <tr>
-      <th scope="row"><?=$producto->getId()?>
+      <td scope="row"><?=$producto->getId()?>
       <a href="./use-cases/gestionar-baja.php?option=delete&id=<?=$producto->getId()?>">
         <img width="16"src="./assets/trash.svg" alt="Quitar">
       </a>
-    </th>
+      <a href="../products-app/index.php?page=editar&id=<?=$producto->getId()?>">
+        <img width="16"src="./assets/pencil-square.svg" alt="Editar">
+      </a>
+    </td>
       
       <td><?=get_class($producto)?></td>
       <td><?=$producto->getNombreProducto()?></td>

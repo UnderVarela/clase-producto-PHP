@@ -12,7 +12,9 @@ if(!isset($_SESSION['productos']))
   && !empty($_GET['id']) 
   && isset ($_GET['option']) 
   && $_GET['option'] === 'delete') {
-    // Eliminar 
+    
+    
+  // Eliminar 
   $indice = false;
     foreach ($_SESSION['productos'] as $key=> $producto) {
       if ($producto->getId() === $_GET['id']) {
