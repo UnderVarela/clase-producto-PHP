@@ -21,6 +21,7 @@ require_once(USE_CASES.'listar-productos.php');
   <thead>
     <tr>
       <th scope="col">Código</th>
+      <th scope="col">Tipo</th>
       <th scope="col">Nombre</th>
       <th scope="col">Precio</th>
   </thead>
@@ -29,7 +30,13 @@ require_once(USE_CASES.'listar-productos.php');
     foreach ($productos as $key => $producto):
     ?>
     <tr>
-      <th scope="row"><?=$producto->getId()?> (<?=get_class($producto)?>)</th>
+      <th scope="row"><?=$producto->getId()?>
+      <a href="./use-cases/gestionar-baja.php?option=delete&id=<?=$producto->getId()?>">
+        <img width="16"src="./assets/trash.svg" alt="Quitar">
+      </a>
+    </th>
+      
+      <td><?=get_class($producto)?></td>
       <td><?=$producto->getNombreProducto()?></td>
       <td><?=$producto->getPrecio()?> €</td>
     </tr>
@@ -39,7 +46,7 @@ require_once(USE_CASES.'listar-productos.php');
   </tbody>
   <tfoot>
     <tr>
-      <th colspan="2" scope="col"><strong>Su compra</strong></th>
+      <th colspan="3" scope="col"><strong>Su compra</strong></th>
       <td scope="col"><strong>Total <?=$compra['total']?> €</strong></td>
      
     </tr>

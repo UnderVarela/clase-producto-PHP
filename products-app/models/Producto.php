@@ -7,7 +7,7 @@ abstract class Producto {
   private string $id;
   
   private DateTime $fechaAlta;
-  static private int $serie = 0;
+  static public int $serie = 0;
 
 function __construct (string $nombreProducto, float $precio,) {
   $this->orden = ++Producto::$serie;
@@ -28,6 +28,10 @@ function __construct (string $nombreProducto, float $precio,) {
 function getId (): string {
   return $this->id;
 
+}
+
+function getOrden (): int {
+  return $this->orden;
 }
 
 function getPrecio (): float {
