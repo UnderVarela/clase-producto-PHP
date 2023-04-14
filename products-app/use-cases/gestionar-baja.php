@@ -32,7 +32,8 @@ if(!isset($_SESSION['productos']))
 
 
   // Redirijo a algún sitio:
-  if (!isset($_SESSION['productos']) || count($_SESSION['productos']) < 1)
+  if (!isset($_SESSION['productos']) || count($_SESSION['productos']) < 1) {
+  unset($_SESSION['productos']);
   header('location: ../index.php?page=home');
-  else
- header('Location: ../index.php?page=listado');
+  } else
+  header('Location: ../index.php?page=listado');
