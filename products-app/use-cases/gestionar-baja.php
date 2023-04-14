@@ -23,6 +23,7 @@ if(!isset($_SESSION['productos']))
 
     if ($indice !== false) {
       unset($_SESSION['productos'][$indice]);
+      
     }
 
   } else {
@@ -31,4 +32,7 @@ if(!isset($_SESSION['productos']))
 
 
   // Redirijo a algún sitio:
-header('Location: ../index.php?page=listado');
+  if (!isset($_SESSION['productos']) || count($_SESSION['productos']) < 1)
+  header('location: ../index.php?page=home');
+  else
+ header('Location: ../index.php?page=listado');
